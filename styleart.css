@@ -1,5 +1,13 @@
 /* style.css */
 
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+
 
 
 .product-card {
