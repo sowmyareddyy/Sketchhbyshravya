@@ -1,4 +1,10 @@
 // script.js
+<script>
+  function toggleMenu() {
+    const navMenu = document.getElementById("navMenu");
+    navMenu.classList.toggle("active");
+  }
+</script>
 
 const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
