@@ -487,3 +487,22 @@ body.dark-mode footer {
         transform: translateY(0);
     }
 }
+.maintenance-banner {
+    background-color: #ffeaea;
+    color: red;
+    text-align: center;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-bottom: 2px solid red;
+}
+
+.maintenance-banner a {
+    color: red;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.maintenance-banner a:hover {
+    color: darkred;
+}
