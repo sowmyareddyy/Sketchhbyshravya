@@ -506,3 +506,29 @@ body.dark-mode footer {
 .maintenance-banner a:hover {
     color: darkred;
 }
+.maintenance-banner {
+    background-color: #ffeaea;
+    color: red;
+    text-align: center;
+    padding: 1.2rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-bottom: 2px solid red;
+}
+
+.whatsapp-inline-btn {
+    display: inline-block;
+    background-color: #25d366;
+    color: white;
+    padding: 6px 16px;
+    margin: 0 6px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-inline-btn:hover {
+    background-color: #1ebf5e;
+}
