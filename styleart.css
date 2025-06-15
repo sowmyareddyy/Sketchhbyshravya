@@ -1,4 +1,11 @@
 /* style.css */
+.description {
+  font-size: 0.9rem;        /* smaller font */
+  color: #666666;           /* soft gray */
+  margin: 4px 0;            /* subtle spacing */
+  line-height: 1.4;         /* good readability */
+}
+
 
 body {
     font-family: 'Segoe UI', sans-serif;
