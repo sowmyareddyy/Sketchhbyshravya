@@ -590,3 +590,9 @@ body.dark-mode footer {
 .collab-form button:hover {
     background: #ff1f3b;
 }
+.desc {
+    color: #666; /* soft grey */
+    font-size: 0.9rem; /* slightly smaller than normal */
+    margin: 4px 0; /* optional spacing */
+    line-height: 1.4; /* better readability */
+}
