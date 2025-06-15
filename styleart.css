@@ -1,4 +1,65 @@
 /* style.css */
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 10px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.product-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  font-size: 1rem;
+  margin: 10px 0 5px;
+}
+
+.description {
+  font-size: 0.85rem;
+  color: #777;
+  margin: 4px 0;
+}
+
+.product-card p {
+  margin: 4px 0;
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.qty-btn {
+  background-color: #eee;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.qty-count {
+  font-size: 0.9rem;
+}
+
 .products-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 2–3 per row depending on screen */
