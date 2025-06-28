@@ -258,43 +258,37 @@
     </section>
 
 
+<section id="order-form-section" class="form-container">
+  <h2 class="form-title">Delivery Details 🛍️</h2>
+  <form id="order-form">
+    <div class="form-group">
+      <label for="cust-name">Full Name</label>
+      <input type="text" id="cust-name" placeholder="e.g. Shravya Reddy" required>
+    </div>
 
-    <section class="cart">
-        <h2>Your Cart</h2>
-        <ul id="cart-items"></ul>
-        <p id="cart-total">Total: ₹0</p>
-        <button id="pay-now">Proceed to Pay</button>
-        <p class="note">Delivery Charges ₹100 within Telangana.<br />For orders outside, DM us on WhatsApp.</p>
-        <a href="https://wa.me/7993289608" target="_blank" class="whatsapp-btn">DM on WhatsApp</a>
-    </section>
-    <section id="order-form-section" id="delivery" class="form-container">
-        <h2 class="form-title">Delivery Details 🛍️</h2>
-        <form id="order-form">
-            <div class="form-group">
-                <label for="cust-name">Full Name</label>
-                <input type="text" id="cust-name" placeholder="e.g. Shravya Reddy" required>
-            </div>
+    <div class="form-group">
+      <label for="cust-address">Full Address</label>
+      <textarea id="cust-address" rows="4" placeholder="House no, Street, Area, City" required></textarea>
+    </div>
 
-            <div class="form-group">
-                <label for="cust-address">Full Address</label>
-                <textarea id="cust-address" rows="4" placeholder="House no, Street, Area, City" required></textarea>
-            </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="cust-pincode">Pincode</label>
+        <input type="text" id="cust-pincode" placeholder="6 digits" required>
+      </div>
 
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="cust-pincode">Pincode</label>
-                    <input type="text" id="cust-pincode" placeholder="6 digits" required>
-                </div>
+      <div class="form-group">
+        <label for="cust-phone">Phone Number</label>
+        <input type="text" id="cust-phone" placeholder="10 digits" required>
+      </div>
+    </div>
 
-                <div class="form-group">
-                    <label for="cust-phone">Phone Number</label>
-                    <input type="text" id="cust-phone" placeholder="10 digits" required>
-                </div>
-            </div>
+    <a href="upi://pay?pa=7013741836@axl&pn=Sowmya+Reddy+Vangooru&cu=INR" class="pay-button" style="text-decoration:none;" target="_blank">
+      Proceed to Pay 💸
+    </a>
+  </form>
+</section>
 
-            <button type="button" id="pay-now-final" class="pay-button">Proceed to Pay 💸</button>
-        </form>
-    </section>
 
 <section class="collab-section" id="collab">
   <h2>Want to <span class="highlight">Collaborate</span> or Send a PR?</h2>
