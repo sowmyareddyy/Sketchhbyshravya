@@ -1,5 +1,3 @@
-// script.js
-
 const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
 const modeLabel = document.querySelector('.mode-label');
@@ -48,7 +46,6 @@ function updateCartDisplay() {
     if (total > 0) total += 100; // Delivery Charge
     cartTotal.textContent = `Total: ₹${total}`;
 }
-
 
 function addToCart(id, name, price, section) {
     if (section === 'painting' && cart[id]) {
@@ -145,7 +142,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('pay-now-final').addEventListener('click', () => {
         if (!validateForm()) return;
-        window.open('https://phon.pe/YOUR-LINK-HERE', '_blank');
+
+        // Calculate final total
+        let total = 0;
+        Object.keys(cart).forEach(itemId => {
+            const item = cart[itemId];
+            total += item.price * item.quantity;
+        });
+        if (total > 0) total += 100;
+
+        // Create dynamic UPI link
+        const upiLink = `upi://pay?pa=7013741836@axl&pn=Sowmya%20Reddy%20Vangooru&am=${total}&cu=INR`;
+        window.open(upiLink, '_blank');
+
         showSuccessMessage();
 
         // Email notification to seller (optional)
