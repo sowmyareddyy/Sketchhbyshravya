@@ -1,3 +1,5 @@
+// script.js
+
 const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
 const modeLabel = document.querySelector('.mode-label');
@@ -45,6 +47,7 @@ function updateCartDisplay() {
 
     if (total > 0) total += 100; // Delivery Charge
     cartTotal.textContent = `Total: ₹${total}`;
+    return total;
 }
 
 function addToCart(id, name, price, section) {
@@ -110,7 +113,6 @@ function showSuccessMessage() {
     updateCartDisplay();
 }
 
-// Attach handlers dynamically
 window.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-add]').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -143,16 +145,8 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('pay-now-final').addEventListener('click', () => {
         if (!validateForm()) return;
 
-        // Calculate final total
-        let total = 0;
-        Object.keys(cart).forEach(itemId => {
-            const item = cart[itemId];
-            total += item.price * item.quantity;
-        });
-        if (total > 0) total += 100;
-
-        // Create dynamic UPI link
-        const upiLink = `upi://pay?pa=7013741836@axl&pn=Sowmya%20Reddy%20Vangooru&am=${total}&cu=INR`;
+        const total = updateCartDisplay(); // Get latest total
+        const upiLink = `https://pay.openupi.in/upi/7013741836@axl?name=Sowmya%20Reddy&amount=${total}`;
         window.open(upiLink, '_blank');
 
         showSuccessMessage();
