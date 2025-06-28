@@ -34,12 +34,10 @@ function updateCartDisplay() {
         cartItems.appendChild(li);
         total += item.price * item.quantity;
 
-        // Update visible quantity near product
         const qtySpan = document.getElementById(`qty-${itemId}`);
         if (qtySpan) qtySpan.textContent = item.quantity;
     });
 
-    // Reset counts for items not in cart
     document.querySelectorAll('.qty-count').forEach(span => {
         const id = span.id.replace('qty-', '');
         if (!cart[id]) span.textContent = '0';
@@ -47,7 +45,6 @@ function updateCartDisplay() {
 
     if (total > 0) total += 100; // Delivery Charge
     cartTotal.textContent = `Total: ₹${total}`;
-    return total;
 }
 
 function addToCart(id, name, price, section) {
@@ -61,11 +58,7 @@ function addToCart(id, name, price, section) {
     }
 
     if (!cart[id]) {
-        cart[id] = {
-            name,
-            price,
-            quantity: 1
-        };
+        cart[id] = { name, price, quantity: 1 };
     } else {
         cart[id].quantity += 1;
     }
@@ -103,6 +96,16 @@ function validateForm() {
     }
 
     return true;
+}
+
+function calculateTotal() {
+    let total = 0;
+    Object.keys(cart).forEach(itemId => {
+        const item = cart[itemId];
+        total += item.price * item.quantity;
+    });
+    if (total > 0) total += 100;
+    return total;
 }
 
 function showSuccessMessage() {
@@ -145,25 +148,30 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('pay-now-final').addEventListener('click', () => {
         if (!validateForm()) return;
 
-        const total = updateCartDisplay(); // Get latest total
-        const upiLink = `https://pay.openupi.in/upi/7013741836@axl?name=Sowmya%20Reddy&amount=${total}`;
-        window.open(upiLink, '_blank');
+        const name = document.querySelector('#cust-name').value;
+        const address = document.querySelector('#cust-address').value;
+        const pincode = document.querySelector('#cust-pincode').value;
+        const phone = document.querySelector('#cust-phone').value;
+        const total = calculateTotal();
 
-        showSuccessMessage();
-
-        // Email notification to seller (optional)
+        // Send email using Formspree
         fetch('https://formspree.io/f/YOUR_FORM_ID', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                name: document.querySelector('#cust-name').value,
-                address: document.querySelector('#cust-address').value,
-                pincode: document.querySelector('#cust-pincode').value,
-                phone: document.querySelector('#cust-phone').value,
-                message: 'New order placed on Art Portfolio!'
+                name,
+                address,
+                pincode,
+                phone,
+                message: `New order of ₹${total} placed from ${name}`
             })
         });
+
+        // Send WhatsApp message link
+        const message = encodeURIComponent(`New order placed!\nName: ${name}\nPhone: ${phone}\nPincode: ${pincode}\nAddress: ${address}\nAmount: ₹${total}`);
+        const whatsappLink = `https://wa.me/91xxxxxxxxxx?text=${message}`;
+        window.open(whatsappLink, '_blank');
+
+        showSuccessMessage();
     });
 });
