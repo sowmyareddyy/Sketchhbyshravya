@@ -169,7 +169,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         // Send WhatsApp message link
         const message = encodeURIComponent(`New order placed!\nName: ${name}\nPhone: ${phone}\nPincode: ${pincode}\nAddress: ${address}\nAmount: ₹${total}`);
-        const whatsappLink = `https://wa.me/91xxxxxxxxxx?text=${message}`;
+        const whatsappLink = `https://wa.me/917993289608?text=${message}`;
         window.open(whatsappLink, '_blank');
 
         showSuccessMessage();
