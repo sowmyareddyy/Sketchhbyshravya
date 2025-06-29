@@ -1,13 +1,15 @@
+/* Default light mode (optional) */
+.custom-caption {
+  color: #333; /* fallback for light mode */
+}
+
+/* Dark mode styling */
 @media (prefers-color-scheme: dark) {
   .custom-caption {
     color: #ffccff; /* light purplish-pink */
-    /* You can also try:
-       color: #ffffff; // white
-       color: #ff69b4; // hot pink
-       color: #d8bfd8; // thistle
-    */
   }
 }
+
 
 /* -------------------- LOGO & NAVIGATION -------------------- */
 .food-munch-logo {
