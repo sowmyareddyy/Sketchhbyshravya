@@ -466,12 +466,17 @@ footer {
     background: #ff1f3b;
 }
 
-/* -------------------- DARK MODE FIXES FOR TEXT -------------------- */
+/* Default dark mode fixes */
 body.dark-mode .description,
 body.dark-mode .desc,
 body.dark-mode .product-card h3,
-body.dark-mode .custom-orders p,
 body.dark-mode .cart .note,
 body.dark-mode .collab-text {
     color: #e0e0e0 !important;
 }
+
+/* Special color just for the caption */
+body.dark-mode .custom-orders p.custom-caption {
+    color: #ffccff !important; /* light pink/purple */
+}
+
