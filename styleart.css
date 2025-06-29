@@ -1,8 +1,7 @@
 @media (prefers-color-scheme: dark) {
   .custom-caption {
-    color: #ffffff; /* white */
-    /* or use one of the below instead of white */
-    /* color: #ff69b4; */ /* hot pink */
+  
+    color: #ff69b4; 
     /* color: #d8bfd8; */ /* thistle (light purple) */
   }
 }
