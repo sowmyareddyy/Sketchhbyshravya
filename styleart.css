@@ -9,6 +9,9 @@
     color: #ffccff; /* light purplish-pink */
   }
 }
+.custom-caption {
+  color: #ffccff !important;
+}
 
 
 /* -------------------- LOGO & NAVIGATION -------------------- */
